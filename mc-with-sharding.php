@@ -132,7 +132,7 @@ class MC
 			self::Setup();
 			$value = self::$_instance->delete($key);
 			if($value === false)
-				error_log("Memcached set failure. Key: $key");
+				error_log("Memcached delete failure. Key: $key");
 		}
 	}
 }

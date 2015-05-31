@@ -44,6 +44,8 @@ class MC
 	public static function Delete($key)
 	{
 		self::Setup();
-		self::$_instance->delete($key);
+		$value = self::$_instance->delete($key);
+		if($value === false)
+			error_log("Memcached delete failure. Key: $key");
 	}
 }
